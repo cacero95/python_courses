@@ -1,0 +1,5 @@
+response.xpath('//div[@class="sliderHome"]').get()
+response.xpath('//div[@class="sliderHome"]/div[@class="bx-wrapper"]').get()
+response.css('div.seccionMap li a').xpath('@href').extract()
+response.xpath('//ul[@id="bxHomeg_1e89cbe8_fded_41bf_8761_9367cdeda93a"]/li/a/@href').extract()
+response.css('.infoNoticias a::text').extract()
