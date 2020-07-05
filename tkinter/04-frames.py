@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageTk
 
+
 window = Tk()
 window.title("Frames on Tkinter")
 window.geometry("700x700")
