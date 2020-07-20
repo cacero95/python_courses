@@ -1,0 +1,6 @@
+<!--Anythimg that goes between a block template with same block name will display in the layout block-->
+<!--the block.super will render the template between the layout that in this case is the father-->
+{% extends 'layout.html' %} {% block title %} index {% endblock %} {% block content %} {{ block.super }}
+<h1>Inicio</h1>
+<p>Years from 1995 to 2020</p>
+{% endblock %}
