@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from myApp.models import Article
+from django.db.models import Q # is neccesary for make or sql queries with the django ORM
 # Create your views here.
 menu = f"""
     <nav>
@@ -109,7 +110,31 @@ def getAll_articles(request):
     # Article.objects[:3] the number is the quantity of element required
     # Article.objects.order_by('-title')[1:2] add an from and the limit to the query
     # [from:limit]
-    articles = Article.objects.all()
+    # articles = Article.objects.all()
+    # ------ ORM filters with django --------
+    # with the method filter perform a query between the data according a condition
+    # articles = Article.objects.filter(title='Batman')
+    # for make gaps with the framework is the next form
+    # articles = Article.objects.filter(title__contains="article")
+    # in gaps also has a excact option key sensitive
+    # articles = Article.objects.filter(title__iexact="article")
+    # for make a query > or < is the next form
+    articles = Article.objects.filter(id__gt=12)  # gt = >
+    articles = Article.objects.filter(id__gte=12) # gt = >=
+    articles = Article.objects.filter(id__lt=12)  # gt = <
+    articles = Article.objects.filter(id__lte=12) # gt = <=
+    articles = Article.objects.filter(id__lte=12, title__contains="deku") # is possible add more than one lookups
+    articles = Article.objects.filter(
+        id__gt=7
+    ).exclude( # with the method exclude skip all the element below a condition
+        public=False
+    )
+    # example of orm queries with a or condition
+    articles = Article.objects.filter(
+        Q(title__contains="deku") | Q(title__contains="batman")
+    )
+    # but in case that is neccesary make sql queries
+    articles = Article.objects.raw("select * from myApp_article where title='Deku' and public=1")
     return render(request, 'articles.html', {
         'articles': articles
     })

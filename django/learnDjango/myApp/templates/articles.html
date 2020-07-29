@@ -12,6 +12,7 @@
                     <strong>
                         {{article.id}}. {{article.title}}
                     </strong>
+                    <br>
                 </span>
                 <span>
                     {{article.content}}
@@ -19,6 +20,12 @@
                 <br>
                 <span class="actions_buttons">
                     <a href="{% url 'delete_articles' id=article.id %}">Delete</a>
+                </span>
+                <br>
+                <span>
+                    <small>
+                        Created at: {{article.created_at}}
+                    </small>
                 </span>
             </p>
         </li>
