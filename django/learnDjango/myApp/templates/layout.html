@@ -15,30 +15,47 @@
 </head>
 
 <body>
-    <h1>Web page with django</h1>
-    <hr/>
+    <header>
+        <div id="logo">
+            <!--Django logo-->
+            <img src="{% static 'images/logo.png' %}" alt="logo.png">
+            <h1>Web page with django</h1>
+        </div>
+    </header>
     <nav>
         <ul>
             <li>
-                <a href="/">Index</a>
+                <a href="{% url 'index' %}">Index</a>
             </li>
             <li>
-                <a href="/hi_world">Hi_world</a>
+                <a href="{% url 'hi_world' %}">Hi_world</a>
             </li>
             <li>
-                <a href="/contact">Contact</a>
+                <a href="{% url 'contact' name='andres' %}">Contact</a>
+            </li>
+            <li>
+                <a href="{% url 'filter' %}">Filter page</a>
+            </li>
+            <li>
+                <a href="{% url 'all_articles' %}">Articulos</a>
             </li>
         </ul>
     </nav>
-    <hr/>
+    <div class="barra">
+        <span class="left_edge"></span>
+        <span class="barra_content"></span>
+        <span class="right_edge"></span>
+    </div>
     <div id="content">
-        {% block content %}
-        <strong>unlock super extends for render this!!!</strong>
-        <!---Coding for the python blocks-->
-        {% endblock %}
+        <div class="box">
+            {% block content %}
+            <strong>unlock super extends for render this!!!</strong>
+            <!---Coding for the python blocks-->
+            {% endblock %}
+        </div>
     </div>
     <footer>
-        Master in Python &copy; Andres Acero
+        Master in Python &copy; Andres Acero - {% now "d/m/Y h:m:s" %}
     </footer>
 </body>
 

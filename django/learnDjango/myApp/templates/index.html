@@ -1,6 +1,46 @@
 <!--Anythimg that goes between a block template with same block name will display in the layout block-->
 <!--the block.super will render the template between the layout that in this case is the father-->
-{% extends 'layout.html' %} {% block title %} index {% endblock %} {% block content %} {{ block.super }}
-<h1>Inicio</h1>
+{% extends 'layout.html' %}
+{% block title %}
+ {{title}} 
+{% endblock %}
+{% block content %}
+{% comment %}
+  with represent the chance to send properties to the templates
+  if in the include exist the property only the templates variables
+  will only avaliable
+{% endcomment %}
+{% include "actual_date.html" with hello="hi world from the template"%}
+{% comment 'this is a comment with django' %}
+{% endcomment %}
+{{ block.super }}
+<h1 class="title">{{title_view}}</h1>
+{% if author %}
+  <p>
+      {{author}}
+  </p>
+{% else %}
+  <p>the name does not exist</p>
+{% endif %}
+{% comment %}
+  2022|divisibleby:2 the filter shows if the number is divisible with another
+{% endcomment %}
+{{2022|divisibleby:2}}
 <p>Years from 1995 to 2020</p>
+<ul class="list">
+    {% for year in years %}
+    <li>
+      {% comment %}
+        with forlooop.first say if the element is the first on the array
+        with forlooop.first say if the element is the last on the array
+        with forlooop.counter0 give the index of the element in the array
+        with forlooop.revcounter0 give the index of the element in the array
+      {% endcomment %}
+        {{year}} {{forloop.first}} {{forloop.last}} {{forloop.counter0}} {{forloop.revcounter0}}
+    {% empty %}
+        <span>Item empty</span>
+    </li>
+    {% endfor %}
+</ul>
+{{my_variable}}
 {% endblock %}

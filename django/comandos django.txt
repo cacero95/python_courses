@@ -1,0 +1,4 @@
+# comandos django
+python manage.py makemigrations # Create a migrate for recreate the database
+python manage.py sqlmigrate 'app-name' 'number of the migration' # create a script with the steps to migrate the dba
+python manage.py migrate # import the last migrate in the migrations folder

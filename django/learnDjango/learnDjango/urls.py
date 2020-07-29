@@ -24,5 +24,13 @@ urlpatterns = [
     path('hi_world/', myApp.views.hi_world, name="hi_world"),
     path('hi_world/<int:number>', myApp.views.hi_world, name="hi_world"),
     path('contact/', myApp.views.contact, name="contact"),
-    path('contact/<str:name>', myApp.views.contact, name="contact")
+    path('contact/<str:name>', myApp.views.contact, name="contact"),
+    path('filter/', myApp.views.filter_page, name="filter"),
+    path('create_article/<str:title>/<str:content>/<str:public>', myApp.views.create_article, name="create_article"),
+    path('article/<str:title>', myApp.views.article, name="article"),
+    path('update_article/<str:id>/<str:title>/<str:content>/<str:public>', myApp.views.update_article, name="update_article"),
+    path('all_articles', myApp.views.getAll_articles, name="all_articles"),
+    path('delete_articles/<int:id>', myApp.views.delete_article, name="delete_articles"),
+    path('delete_articles/<str:title>', myApp.views.delete_article, name="delete_articles"),
+    path('slider/', myApp.views.slider, name="slider")
 ]

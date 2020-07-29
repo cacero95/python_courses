@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+  Articles
+{% endblock title %}
+{% block content %}
+  <h2>Available articles</h2>
+  <ul class="list">
+      {% for article in articles  %}
+        <li>
+            <p>
+                <span>
+                    <strong>
+                        {{article.id}}. {{article.title}}
+                    </strong>
+                </span>
+                <span>
+                    {{article.content}}
+                </span>
+                <br>
+                <span class="actions_buttons">
+                    <a href="{% url 'delete_articles' id=article.id %}">Delete</a>
+                </span>
+            </p>
+        </li>
+      {% endfor %}
+  </ul>
+{% endblock content %}

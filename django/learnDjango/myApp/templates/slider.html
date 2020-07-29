@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/slides.css' %}">
+</head>
+<body>
+    <section>
+        <img src=" {% static 'images/grey-cliff-beside-ocean-3031075.jpg' %} " alt="main_screen" id="slider">
+        <ul class="navigation">
+            <li onclick="imgSlider('grey-cliff-beside-ocean-3031075.jpg')">
+                <img src=" {% static 'images/grey-cliff-beside-ocean-3031075.jpg' %} " alt="">
+            </li>
+            <li onclick="imgSlider('man-doing-hand-stand-on-mountain-2387866.jpg')">
+                <img src="{% static 'images/man-doing-hand-stand-on-mountain-2387866.jpg' %}" alt="">
+            </li>
+            <li onclick="imgSlider('mountain-beside-body-of-water-with-aurora-borealis-2113566.jpg')">
+                <img src="{% static 'images/mountain-beside-body-of-water-with-aurora-borealis-2113566.jpg' %}" alt="">
+            </li>
+            <li onclick="imgSlider('mountain-beside-body-of-water-with-aurora-borealis-2113566.jpg')">
+                <img src="{% static 'images/mountain-beside-body-of-water-with-aurora-borealis-2113566.jpg' %}" alt="">
+            </li>
+        </ul>
+        <h2>Simple Image Slider</h2>
+    </section>
+    <script src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

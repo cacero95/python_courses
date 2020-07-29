@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% load filters %}
+
+{% block title %}
+  {{title}}
+{% endblock title %}
+
+{% block content %}
+    <p>This is the filter page with django</p>
+    {% comment %}
+      cut the spaces use the filter |cut
+    {% endcomment %}
+    <h2>
+        cut the spaces or whatever is needed use the filter 'cut'
+    </h2>
+    <p>
+        {{"created by cacero95"|cut:" "}}
+    </p>
+    {% comment %}
+      when the data could be undefined use |default for add a alternative text
+    {% endcomment %}
+    <h2>
+        'default' gives an alternative text to a possible undefined data
+    </h2>
+    <p>
+        {{text|default:'Is undefined sorry for that'}}
+    </p>
+    {% comment %}
+      give the first element on a list with the filter first
+      give the last element on a list with the filter last
+      give a list elements with a type division with the filter join
+      give the size on array or a string with the filter length
+      random on a list with the filter random
+    {% endcomment %}
+    <h2>
+        give the first element on a list with the filter 'first'<br>
+        give the last element on a list with the filter 'last'<br>
+        give a list elements with a type division with the filter 'join'<br>
+        give the size on array or a string with the filter 'length'<br>
+        random on a list with the filter 'random'
+    </h2>
+    <p>
+        {{array|first}}<br>
+        {{array|last}}<br>
+        {{array|join:', '}}<br>
+        {{array|length}}<br>
+        {{array|random}}
+    </p>
+    {% comment %}
+      give the text in lowercase with the filter lower
+    {% endcomment %}
+    <h2>give the text in lowercase with 'lower'</h2>
+    <p>
+        {{"TeXt"|lower}}
+    </p>
+    {% comment %}
+      skip every html template in a variable as soon as possible with the filter striptags
+    {% endcomment %}
+    <h2>
+      skip every html template in a variable as soon as possible with 'striptags'
+    </h2>
+    <p>
+        {{"<h1>Text</h1> <strong>Testing</strong>"|striptags}}
+    </p>
+    {% comment %}
+      give the number of letters in a string with wordcount
+    {% endcomment %}
+    <h2>
+        give the number of letters in a string with the filter 'wordcount'
+    </h2>
+    <p>
+        {{"<h1>Text</h1><strong>Testing</strong>"|striptags|wordcount}}
+    </p>
+    {% comment %}
+      customize filters
+    {% endcomment %}
+    <h2>customize filters</h2>
+    <p>
+      {{"cacero95 - zero"|hello|safe}}
+    </p>
+{% endblock content %}
