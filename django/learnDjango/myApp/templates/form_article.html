@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create article
+{% endblock title %}
+
+{% block content %}
+  <h2>Forms with django</h2>
+  {% comment %}
+    like the variable form has the django form
+    some data is added to it like errors, for get those errors
+    'variable_name'.errors
+  {% endcomment %}
+  {% if form.errors %}
+    <span class="warnings">
+      <strong>An error was ocurred</strong>
+      {{form.errors}}
+    </span>
+  {% endif %}
+  <form class="forms_actions" action="" method="POST">
+    {% comment %}
+      {% csrf_token %} is a token which provide security in http request
+    {% endcomment %}  
+    {% csrf_token %}
+    {% comment %}
+      in this case the form comes from a class in python
+      but it contains html templates, in case which is neccesary
+      contain the form into a html template use the next combinations
+      {{'variable'.as_p}} comes the template between <p></p>
+      {{'variable'.as_ul}} comes the template between <ul></ul>
+    {% endcomment %} 
+    {{ form }}
+    <input type="submit" value="Save">
+  </form>
+{% endblock content %}

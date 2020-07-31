@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from myApp.models import Article
 from django.db.models import Q # is neccesary for make or sql queries with the django ORM
+from myApp.forms import FormArticle
+from django.contrib import messages # mensajes flash o mensajes de una sola sesion
 # Create your views here.
 menu = f"""
     <nav>
@@ -75,16 +77,40 @@ def filter_page(request):
         'array':[0,1,2,3,4,5]
     })
 
-def create_article(request, title, content, public):
+def create_article(request):
+    # save a element in the dba with the models
+    # article.save()
+    return render(request, 'create_article.html')
+
+def save_article(request, title, content, public):
     article = Article(
         title = title,
-        content= content,
+        content = content,
         public = public
     )
-    # save a element in the dba with the models
     article.save()
-    return redirect('all_articles')
+    messages.success(request, 'Article created')
+    
 
+def form_article(request):
+    if request.method == 'POST':
+        form = FormArticle(request.POST)
+        if form.is_valid():
+            data_form = form.cleaned_data # get the data from the data
+            title = data_form.get('title')
+            content = data_form['content']
+            public = data_form['public']
+            save_article(request, title, content, public)
+            return redirect('all_articles')
+        else:
+            return HttpResponse(
+                "<span>Article could not saved</span>"
+            )
+    else:
+        form = FormArticle() # Create a white form
+    return render(request, 'form_article.html', {
+        'form':form
+    })
 def article(request, title):
     try:
         # for select only one element from the dba use the get method 
@@ -135,9 +161,12 @@ def getAll_articles(request):
     )
     # but in case that is neccesary make sql queries
     articles = Article.objects.raw("select * from myApp_article where title='Deku' and public=1")
+    # order_by order the data below a condition
+    articles = Article.objects.all().order_by('-id')
     return render(request, 'articles.html', {
         'articles': articles
     })
+
 def delete_article(request, id=None, title=None):
     try:
         article = Article.objects.get(pk=id) if id else Article.objects.get(title=title)

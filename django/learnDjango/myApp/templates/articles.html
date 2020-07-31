@@ -4,6 +4,17 @@
 {% endblock title %}
 {% block content %}
   <h2>Available articles</h2>
+  {% comment %}
+    this section gonna be for the messages from the server
+    this flash messages will delete after a refresh
+  {% endcomment %}
+  {% if messages %}
+    {% for message in messages %}
+        <div class="message">
+            {{message}}
+        </div>
+    {% endfor %}
+  {% endif %}
   <ul class="list">
       {% for article in articles  %}
         <li>
