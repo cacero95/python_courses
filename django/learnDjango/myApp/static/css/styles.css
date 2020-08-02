@@ -162,6 +162,15 @@ nav ul li a:hover {
     width: max-content;
     border-radius: 10px;
 }
+#content .box .article_head {
+    width: 25%;
+    display: grid;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#content .box .article_head img {
+    width: 100px;
+}
 /** footer styles **/
 
 footer {

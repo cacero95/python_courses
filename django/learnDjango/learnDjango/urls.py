@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import myApp.views
+from django.conf import settings 
 
 # in case when the path change if the name is the same the redirect will find the path
 urlpatterns = [
@@ -36,3 +37,13 @@ urlpatterns = [
     path('delete_articles/<str:title>', myApp.views.delete_article, name="delete_articles"),
     path('slider/', myApp.views.slider, name="slider")
 ]
+
+
+
+# load img settings
+# first do the validations if the project is in local
+# !!! this configuration is on chapter 245 udemy master of python !!!
+if settings.DEBUG:
+    # only static is import if the project is development version
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

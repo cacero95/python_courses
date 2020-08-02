@@ -19,10 +19,17 @@
       {% for article in articles  %}
         <li>
             <p>
-                <span>
+                
+                <span class="article_head">
                     <strong>
                         {{article.id}}. {{article.title}}
                     </strong>
+                    {% if article.image.url != 'null' and article.image.url|length >= 1 %}
+                        {% comment %}
+                          for access to the path of the image path
+                        {% endcomment %}
+                        <img src="{{article.image.url}}" alt="">
+                    {% endif %}
                     <br>
                 </span>
                 <span>

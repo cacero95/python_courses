@@ -1,4 +1,7 @@
 # comandos django
+django-admin startproject "project_name" # create a new django project
+python manage.py startapp "app_name" # create a new app in django
 python manage.py makemigrations # Create a migrate for recreate the database
 python manage.py sqlmigrate 'app-name' 'number of the migration' # create a script with the steps to migrate the dba
 python manage.py migrate # import the last migrate in the migrations folder
+python manage.py createsuperuser # create a super user in the admin django app

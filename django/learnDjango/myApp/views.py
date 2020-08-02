@@ -162,7 +162,7 @@ def getAll_articles(request):
     # but in case that is neccesary make sql queries
     articles = Article.objects.raw("select * from myApp_article where title='Deku' and public=1")
     # order_by order the data below a condition
-    articles = Article.objects.all().order_by('-id')
+    articles = Article.objects.filter(public=True).order_by('-id')
     return render(request, 'articles.html', {
         'articles': articles
     })
