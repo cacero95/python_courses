@@ -1,0 +1,54 @@
+<!---This file will contain the app layouts--->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>
+        {% block title %}
+        <!--Title page-->
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <!--Django logo-->
+            <img src="{% static 'images/logo.png' %}" alt="logo.png">
+            <h1>Web page with django</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Index</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">About</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <div class="barra">
+        <span class="left_edge"></span>
+        <span class="barra_content"></span>
+        <span class="right_edge"></span>
+    </div>
+    <div id="content">
+        <div class="box">
+            {% block content %}
+            <strong>unlock super extends for render this!!!</strong>
+            <!---Coding for the python blocks-->
+            {% endblock %}
+        </div>
+    </div>
+    <footer>
+        Master in Python &copy; Andres Acero - {% now "d/m/Y h:m:s" %}
+    </footer>
+</body>
+
+</html>
