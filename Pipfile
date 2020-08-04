@@ -10,6 +10,7 @@ pylint = "*"
 pillow = "*"
 django = "==3.0.8"
 pylint-django = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.7"
