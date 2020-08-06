@@ -6,6 +6,7 @@ router = DefaultRouter()
 router.register('hello_viewset', views.HelloViewSet, basename="hello_viewset")
 router.register('profile', views.UserProfileViewSet),
 router.register('login', views.LoginViewSet, basename='login')
+router.register('feed', views.UserProfileFeedViewSet)
 urlpatterns = [
     url(r'^hello_view/', views.HelloApiView.as_view()),
     url(r'', include(router.urls))

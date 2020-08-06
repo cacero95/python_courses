@@ -41,3 +41,13 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
     def __str__(self):
         return self.email
+
+class ProfileFeedItem(models.Model):
+    # profile status update
+    user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE) 
+    # That indicates when the profile is deleted all the objects which had a relations key will deleted too
+    status_text = models.CharField(max_length=255)
+    created_on = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.status_text
