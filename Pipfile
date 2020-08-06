@@ -11,6 +11,7 @@ pillow = "*"
 django = "==3.0.8"
 pylint-django = "*"
 django-ckeditor = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"

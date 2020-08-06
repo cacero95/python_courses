@@ -6,3 +6,6 @@ python manage.py sqlmigrate 'app-name' 'number of the migration' # create a scri
 python manage.py migrate # import the last migrate in the migrations folder
 python manage.py createsuperuser # create a super user in the admin django app
 pipenv install django-ckeditor # install ckeditor editor text !amazing!
+# python commands
+pip freeze # display all the python libraries in the terminal
+pip freeze > requirements.txt # create the requirements file with the project specifications
