@@ -1,0 +1,26 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %}
+    {{category.name}}
+{% endblock title %}
+
+{% block content %}
+    <h1>
+        {{category.name}}
+    </h1>
+    <p>
+        {{category.description}}
+    </p>
+    {% comment %}
+      with the property with is posible set variables to the template like the next way
+    {% endcomment %}
+    {% include "articles/list_articles.html" with articles=articles  %}
+    {% comment %}
+      like the models category and articles are related exist a direct relationship
+      and inverse relation, for that reason category.article_set.all or category.get_articles
+      that is indicates in the models in the related_name property contains
+      all the articles related with the category
+      {% include "articles/list_articles.html" with articles=category.articles.all  %}
+    {% endcomment %}
+    {% include "articles/list_articles.html" with articles=category.get_articles.all  %}
+{% endblock content %}

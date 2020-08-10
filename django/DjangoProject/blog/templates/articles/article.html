@@ -1,0 +1,15 @@
+{% extends "layouts/layout.html" %}
+
+{% block title %}
+    {{article.title}}
+{% endblock title %}
+
+{% block content %}
+    <h1>
+        {{article.title}}
+    </h1>
+    <p>
+        {{article.content|safe}}
+        <img src="{{article.image.url}}" alt="{{article.name}}">
+    </p>
+{% endblock content %}

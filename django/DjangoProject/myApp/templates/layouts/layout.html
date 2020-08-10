@@ -34,7 +34,16 @@
                   </a>
               </li>
             {% endfor %}
-            
+            <li>
+                <a href="{% url 'list_article' %}">Categories</a>
+                <ul class="subMenu">
+                    {% for category in categories  %}
+                        <li>
+                            <a href="{% url 'category' category.0 %}"> {{category.1}} </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
         </ul>
     </nav>
     <div class="barra">

@@ -63,7 +63,23 @@ nav ul li a:hover {
     box-shadow: 0px 0px 5px #000000 inset; /**inset dentro de la caja*/
     color: #ffffff;
 }
-
+.subMenu {
+    display: none;
+    position: absolute;
+    width: max-content;
+    background: #2d2d2d;
+}
+.subMenu li {
+    width: 100%;
+}
+nav ul li:hover .subMenu {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+nav ul li:hover .subMenu li {
+    float: left;
+}
 .barra {
     width: 1250px;
     margin: 0 auto;

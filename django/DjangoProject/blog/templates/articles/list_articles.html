@@ -1,0 +1,40 @@
+<div>
+    {% for article in articles %}
+        <h2>
+            <a style="text-decoration: none; color: #ffa500" href="{% url 'article' article.id %}">
+              {{article}}
+            </a>
+        </h2>
+        <p>
+            {% comment %}
+              like article has a relation many to many
+              is neccesary the property all to display all
+              the elements
+            {% endcomment %}
+            {% for category in article.categories.all %}
+              <a href="{% url 'category' category.id %}">{{category.name}}</a>
+              {% comment %}
+                forloop.counter has the number of iteration of the for
+              {% endcomment %}
+              {% if forloop.counter < article.categories.all|length %}
+                {{'-'}}
+              {% endif %}
+            {% endfor %}
+        </p>
+        <span id="created_at">
+          <small>
+              {% comment %}
+                like the article has related with the admin users
+                all the properties are opening in the article
+              {% endcomment %}
+              {{article.user.first_name}} {{article.user.last_name}}
+              {{article.created_at}}
+          </small>
+        </span>
+        <p>
+            {{article.content|safe}}
+            <img src="{{article.image.url}}" alt="">
+
+        </p>
+    {% endfor %}
+    </div>
