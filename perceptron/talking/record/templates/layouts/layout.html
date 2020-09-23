@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Perceptron</title>
+    <link rel="stylesheet" href=" {% static 'css/styles.css' %} ">
+</head>
+<body>
+    <header>
+        Record Perceptron
+    </header>
+    <main>
+        {% block main %}
+
+        {% endblock main %}
+    </main>
+    
+    <script>
+        const post_method = (event) => {
+            console.log('works');
+            console.log(event);
+        }
+    </script>
+</body>
+</html>

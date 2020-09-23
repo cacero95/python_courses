@@ -12,6 +12,9 @@ django = "==3.0.8"
 pylint-django = "*"
 django-ckeditor = "*"
 djangorestframework = "*"
+tflearn = "*"
+tensorflow = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"

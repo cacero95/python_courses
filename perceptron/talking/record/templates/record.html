@@ -1,0 +1,25 @@
+{% extends "layouts/layout.html" %}
+
+{% if form.errors %}
+    <span>Ocurrio un error</span>
+    {{form.errors}}
+{% endif %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="flash_messages">
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% block main %}
+<div class="container_form">
+    <form id="forms_actions" action="{% url 'create_record' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Guardar">
+    </form>
+</div>
+  
+{% endblock main %}

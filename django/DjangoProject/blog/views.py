@@ -4,6 +4,10 @@ from blog.models import Category, Article
 # Create your views here.
 def list(request):
     articles = Article.objects.all()
+    for art in articles:
+        categories = art.categories.all()
+        for cat in categories:
+            print(cat.description)
     return render(request, 'articles/list.html', {
         'title': 'Articles',
         'articles': articles
