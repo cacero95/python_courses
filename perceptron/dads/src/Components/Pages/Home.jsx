@@ -2,13 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Home = ({ template }) => {
-    const { data } = template;
+    const { templates } = template.data;
     return (
-        data ? (
+        templates ? (
             <div className="Editor_container">
                 <div className="webPage">
                     <div 
-                        dangerouslySetInnerHTML={ { __html: data.content } } 
+                        dangerouslySetInnerHTML={ { __html: templates.content } } 
                     />
                 </div>
             </div>

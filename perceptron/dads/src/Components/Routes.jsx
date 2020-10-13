@@ -7,12 +7,15 @@ import { connect } from 'react-redux';
 import {
     addTemplate
 } from '../redux/actionCreators'
+import Monitor from "./Pages/Monitor";
 
 const Routes = ({ addTemplate }) => {
-    const dba = firebase.database().ref('templates');
+    const dba = firebase.database().ref('/');
+    const templates = firebase.database().ref('templates');
     dba.on( 'value', ( snapshot ) => {
         addTemplate({
-            dba,
+            firebase_object: firebase,
+            templates,
             data: snapshot.val()
         })
     })
@@ -22,6 +25,7 @@ const Routes = ({ addTemplate }) => {
                 <Switch>
                     <Route path="/" exact component={Generator} />
                     <Route path="/home" component={Home} />
+                    <Route path="/monitor" component={Monitor} />
                 </Switch>
             </Router>
         </div>

@@ -5,7 +5,11 @@ import {
 } from './actions';
 
 const initialStore = {
-    template: []
+    template: {
+        data: {},
+        templates: {},
+        firebase_object: {}
+    }
 };
 
 const rootReducer = ( state = initialStore, action ) => {
