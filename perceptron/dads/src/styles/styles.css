@@ -56,5 +56,15 @@
 .Editor_container .webPage div {
   padding: 20px 0;
 }
+.Editor_container .webPage div table {
+  border-collapse: 0;
+}
+
+.MonitorChart {
+  padding: 20px 20px;
+  background: #ffffff;
+  overflow-y: scroll;
+  height: 95vh;
+}
 
 /*# sourceMappingURL=styles.css.map */
