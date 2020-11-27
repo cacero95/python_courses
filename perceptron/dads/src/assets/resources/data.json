@@ -1,0 +1,112 @@
+{
+    "questions":[
+        {
+            "question": "¿ Cual es el índice de criminalidad en la ciudad?",
+            "key": "criminal_index"
+        },
+        {
+            "question": "¿Hay algún sistema que permita notificar alguna estación de policía en caso de robo?",
+            "key": "security_system"
+        },
+        {
+            "question": "En promedio cuanto se demora la respuesta de una estación de policía en caso de algún delito ( responder en minutos )?",
+            "key": "criminal_time"
+        },
+        {
+            "question": "¿Hay algún sistema de información que permita informar a los conductores la condición del tráfico en la ciudad?",
+            "key": "traffic_information"
+        },
+        {
+            "question": "¿Existe algún sistema inteligente de semaforización que permita agilizar el tráfico ?",
+            "key": "intelligent_traffic"
+        },
+        {
+            "question": "¿En la ciudad se maneja el metro como medio de transporte?",
+            "key": "metro"
+        },
+        {
+            "question": "¿El sistema de semaforización de la ciudad está adaptado para darle prioridad a las sistemas de emergencia?",
+            "key": "emergency_system"
+        },
+        {
+            "question": "¿Existe un sistema de vigilancia que permita detectar emergencias en la ciudad, que requieran atención de personal capacitado?.",
+            "key": "emergency_detect"
+        },
+        {
+            "question": "¿Cual es el índice de accidentes o siniestros en la ciudad?",
+            "key": "accident_index"
+        },
+        {
+            "question": "¿El acceso al historial médico de una persona está disponible para todas las entidades médicas, de tal manera que la misma pueda recibir atención de manera rápida?",
+            "key": "mediacal_history"
+        },
+        {
+            "question": "¿Cual categoría promedio tienen las entidades médicas en la ciudad?",
+            "key": "medical_category"
+        },
+        {
+            "question": "En caso de un accidente grave que necesite un proceso de alto riesgo ( transfusión, operación, etc. ), ¿la ciudad puede responder bajo sus capacidades?",
+            "key": "medical_capabilities"
+        },
+        {
+            "question": "¿Cuál es el porcentaje del terreno de la ciudad que cubre el transporte público (75%)?",
+            "key": "public_transport"
+        },
+        {
+            "question": "¿Existe un sistema de información que permita informar el estado del transporte y así mismo mejorar la experiencia del usuario al momento de usar el servicio?",
+            "key": "transport_qa"
+        },
+        {
+            "question": "¿Cuál es el índice de personas en porcentaje que prefieren usar el pago electrónico en la ciudad ?",
+            "key": "electronical_pay"
+        },
+        {
+            "question": "¿En la ciudad se manejan herramientas que permitan reutilizar residuos?",
+            "key": "waste_usefull"
+        },
+        {
+            "question": "¿Cuál es el porcentaje de estaciones de calidad del aire que cumplen en la ciudad según el SIAC?",
+            "key": "air_qa"
+        },
+        {
+            "question": "¿En la ciudad manejan herramientas para poder manejar los recursos naturales?",
+            "key": "natural_resources"
+        },
+        {
+            "question": "¿ hasta qué nivel de educación está disponible para los ciudadanos ?.",
+            "key": "education_level"
+        },
+        {
+            "question": "¿ Existe la posibilidad de que un estudiante pueda acceder a los contenidos académicos de su institución de manera virtual ?",
+            "key": "virtual_education"
+        },
+        {
+            "question": "¿ El gobierno realiza iniciativas que promuevan la participación estudiantil, con el objetivo de generar educación en algún tema en específico ?",
+            "key": "student_participation"
+        },
+        {
+            "question": "¿ Existen herramientas que permitan gestionar los cultivos en la ciudad ?",
+            "key": "cultives_management"
+        },
+        {
+            "question": "¿ Existe alguna herramienta que permita generar la comunicación entre agricultores y distribuidores ( supermercados) ?",
+            "key": "supermarkets"
+        },
+        {
+            "question": "¿ Existen herramientas en la ciudad que permitan proteger los cultivos o huertas que proveen a la ciudad ?.",
+            "key": "cultives_protect"
+        },
+        {
+            "question": "¿ Cual es el índice en porcentaje de turismo en la ciudad ?",
+            "key": "turistic_porcentages"
+        },
+        {
+            "question": "¿ Existe alguna herramienta que permita dar a conocer los servicios y los costos de estos al turista antes de realizar el viaje ?",
+            "key": "cost_services"
+        },
+        {
+            "question": "¿ La ciudad maneja herramientas que permitan publicitar y dar a conocer sus servicios y la cultura ?",
+            "key": "publish_culture"
+        }
+    ]
+}

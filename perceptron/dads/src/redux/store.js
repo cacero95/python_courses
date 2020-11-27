@@ -8,6 +8,7 @@ const initialStore = {
     template: {
         data: {},
         templates: {},
+        questions: {},
         firebase_object: {}
     }
 };
